@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Filmes - Detalhe</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}Filmes - Detalhes{% endblock %}
+
+{% block content %}
+
     <h1>Detalhes do Filme</h1>
     <p>Informações sobre o filme selecionado.</p>
+    <p>Esse filme tem tipo, vários herois lutando contra vários vilões. Interessante que essa descrição serve para todos os filmes listados nesse site.</p>
     <p><a href="{% url 'filmes:lista' %}">Voltar para a lista</a>.</p>
-    
-</body>
-</html>
+{%endblock%}

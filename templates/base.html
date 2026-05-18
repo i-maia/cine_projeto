@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Cine Projeto{% endblock %}</title>
+    
+    <!-- Integração de Ativos: Seu arquivo CSS customizado -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+</head>
+<body class="bg-light">
+
+    <!-- Barra de Navegação Padrão -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'filmes:home' %}">🎬 Cine Projeto</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'filmes:home' %}">Início</a>
+                    </li>
+                    <li>
+                        <a class="nav-link active" href="{% url 'filmes:lista' %}">Lista de Filmes</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Conteúdo Dinâmico das Páginas Filhas -->
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 Cine Projeto - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle via CDN -->
+    <script src="https://jsdelivr.net"></script>
+</body>
+</html>
